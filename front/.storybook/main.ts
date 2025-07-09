@@ -5,11 +5,13 @@ const config: StorybookConfig = {
   "addons": [
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
-    "@storybook/addon-vitest"
+    "@storybook/addon-vitest",
+    "@storybook/addon-themes"
   ],
   "framework": {
     "name": "@storybook-vue/nuxt",
     "options": {}
   }
 };
+
 export default config;

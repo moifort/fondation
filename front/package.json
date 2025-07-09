@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "typecheck": "nuxt typecheck",
     "postinstall": "nuxt prepare",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -24,11 +25,11 @@
     "vue-router": "4.5.1"
   },
   "devDependencies": {
-    "storybook": "9.0.5",
-    "@chromatic-com/storybook": "4.0.1",
     "@storybook/addon-a11y": "9.0.5",
     "@storybook/addon-docs": "9.0.5",
+    "@storybook/addon-themes": "9.0.5",
     "@storybook/addon-vitest": "9.0.5",
-    "jsdoc-type-pratt-parser": "4.1.0"
+    "jsdoc-type-pratt-parser": "4.1.0",
+    "storybook": "9.0.5"
   }
 }
