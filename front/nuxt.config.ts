@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   typescript: { strict: true, shim: true },
   modules: [
+    '@nuxtjs/i18n',
     '@nuxtjs/storybook',
     '@nuxt/ui',
     '@nuxt/icon',
@@ -14,4 +15,15 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/test-utils',
   ],
+  i18n: {
+    defaultLocale: 'fr',
+    detectBrowserLanguage: true,
+    locales: [
+      { code: 'fr', name: 'Français' },
+      { code: 'en', name: 'English' },
+    ],
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
+  },
 })

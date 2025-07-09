@@ -2,5 +2,5 @@
 </script>
 
 <template>
-                   <Card />
+  <Card />
 </template>

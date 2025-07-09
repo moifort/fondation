@@ -1,9 +1,11 @@
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
+
 <template>
   <UCard>
     <template #header>
-
-      <Icon name="circle-flags:fr" size="80"/>
-                   Header content goes here.
+      {{ t('hello') }}
     </template>
 
     Main content goes here.
@@ -14,3 +16,10 @@
     </template>
   </UCard>
 </template>
+
+<i18n lang="yaml">
+fr:
+  hello: 'bonjour le monde!'
+en:
+  hello: 'hello world!'
+</i18n>
