@@ -1,13 +1,9 @@
 import type { Preview } from '@storybook-vue/nuxt'
+import {withThemeByClassName, withThemeByDataAttribute} from '@storybook/addon-themes';
+import '../assets/css/main.css'
 
 const preview: Preview = {
     parameters: {
-        darkMode: {
-            current: 'dark',
-            darkClass: 'dark',
-            lightClass: 'light',
-            stylePreview: true,
-        },
         options: {
             storySort: {
                 order: ['components', ['atoms', 'molecules', 'organisms', 'templates', 'pages'], '*'],
@@ -22,5 +18,14 @@ const preview: Preview = {
         docs: { canvas: { sourceState: 'none' } },
     },
     tags: ['autodocs'],
+     decorators: [
+      withThemeByClassName({
+            themes: {
+          light: '',
+              dark: 'dark',
+            },
+    defaultTheme: 'light',
+      }),
+ ]
 }
 export default preview;
