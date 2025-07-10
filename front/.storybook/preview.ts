@@ -1,5 +1,5 @@
-import { withThemeByClassName } from '@storybook/addon-themes'
-import type { Preview } from '@storybook-vue/nuxt'
+import {withThemeByClassName} from '@storybook/addon-themes'
+import type {Preview} from '@storybook-vue/nuxt'
 import '../assets/css/main.css'
 
 const preview: Preview = {
@@ -11,7 +11,6 @@ const preview: Preview = {
       },
     },
     controls: { matchers: { color: /(background|color)$/i, date: /(Date)$/i } },
-    docs: { canvas: { sourceState: 'none' } },
   },
   decorators: [
     withThemeByClassName({
@@ -19,5 +18,20 @@ const preview: Preview = {
       defaultTheme: 'light',
     }),
   ],
+  globalTypes: {
+    locale: {
+      description: 'Internationalization locale',
+      toolbar: {
+        icon: 'globe',
+        items: [
+          { value: 'en', right: '🇺🇸', title: 'English' },
+          { value: 'fr', right: '🇫🇷', title: 'Français' },
+        ],
+      },
+    },
+  },
+  initialGlobals: {
+    locale: 'en',
+  },
 }
 export default preview
