@@ -1,5 +1,6 @@
 import {withThemeByClassName} from '@storybook/addon-themes'
-import type {Preview} from '@storybook-vue/nuxt'
+import type {Preview} from '@storybook-vue/nuxt' // @ts-ignore
+import {useI18n, watchEffect} from '#imports'
 import '../assets/css/main.css'
 
 const preview: Preview = {
@@ -17,6 +18,13 @@ const preview: Preview = {
       themes: { light: '', dark: 'dark' },
       defaultTheme: 'light',
     }),
+    (story, context) => {
+      const { setLocale } = useI18n()
+      watchEffect(() => {
+        setLocale(context.globals.locale || navigator.language || 'en')
+      })
+      return story()
+    },
   ],
   globalTypes: {
     locale: {
