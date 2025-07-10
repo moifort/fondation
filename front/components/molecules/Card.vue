@@ -1,19 +1,21 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const { data, status } = useAsyncGql('SpaceQuery')
 </script>
 
 <template>
-  <UCard>
+  <UCard v-if="status === 'pending'" >
+    Loading...
+  </UCard>
+  <UCard v-if="status === 'error'" >
+    Error...
+  </UCard>
+  <UCard v-else>
     <template #header>
       {{ t('hello') }}
     </template>
 
-    Main content goes here.
-
-    <template #footer>
-      <UIcon name="i-lucide-lightbulb" class="size-5" />
-      Footer content goes here.
-    </template>
+    {{ data }}
   </UCard>
 </template>
 
