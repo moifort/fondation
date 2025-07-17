@@ -9,7 +9,6 @@ const language = navigator.language
 
 <template>
   <UApp>
-    <Icon :name="`circle-flags:${language}`" size="20"/>
     <UButton
       :icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
       color="neutral"

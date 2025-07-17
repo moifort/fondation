@@ -1,0 +1,40 @@
+name: 🚀 deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: ☁️ Firebase
+    runs-on: ubuntu-latest
+    env:
+      FIREBASE_TOOLS: true
+      GQL_HOST: https://api-6zdezivzkq-ey.a.run.app
+    steps:
+      - uses: actions/checkout@v4
+      - name: 🤌 Install bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.2.9'
+      - name: 🔓 Unlock secrets
+        uses: sliteteam/github-action-git-crypt-unlock@1.3.0
+        env:
+          GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_KEY }}
+      - run: bun install --cwd back
+      - run: bun --cwd back tsc
+      - run: bun install --cwd front
+      - run: bun --cwd front generate
+      - name: 🚀 Deploy to Firebase
+        uses: w9jds/firebase-action@v14.1.0
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        with:
+          args: deploy --force
+      - name: 🔄 Run Firestore Migration
+        run: |
+          bunx curl -s -o response.json -w "%{http_code}" https://europe-west3-price-it-85b3e.cloudfunctions.net/system-migration > status_code.txt
+          if [ "$(cat status_code.txt)" -lt 200 ] || [ "$(cat status_code.txt)" -ge 300 ]; then
+            echo "Firestore migration failed!" && cat response.json && exit 1
+          fi
