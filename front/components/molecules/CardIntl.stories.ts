@@ -1,4 +1,4 @@
-import type {Meta, StoryObj} from '@nuxtjs/storybook'
+import type { Meta, StoryObj } from '@nuxtjs/storybook'
 import component from './CardIntl.vue'
 
 const meta = { component } satisfies Meta<typeof component>

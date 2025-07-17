@@ -1,6 +1,6 @@
-import {withThemeByClassName} from '@storybook/addon-themes'
-import type {Preview} from '@storybook-vue/nuxt' // @ts-ignore
-import {useI18n, watchEffect} from '#imports'
+import { withThemeByClassName } from '@storybook/addon-themes'
+import type { Preview } from '@storybook-vue/nuxt' // @ts-ignore
+import { useI18n, watchEffect } from '#imports'
 import '../assets/css/main.css'
 
 const preview: Preview = {
