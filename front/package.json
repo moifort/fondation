@@ -14,25 +14,25 @@
     "@nuxt/fonts": "0.11.4",
     "@nuxt/icon": "1.15.0",
     "@nuxt/image": "1.10.0",
-    "@nuxt/scripts": "0.11.9",
+    "@nuxt/scripts": "0.11.10",
     "@nuxt/test-utils": "3.19.2",
-    "@nuxt/ui": "3.2.0",
+    "@nuxt/ui": "3.3.0",
     "@nuxtjs/i18n": "9.5.6",
     "@nuxtjs/storybook": "8.4.1",
-    "@unhead/vue": "2.0.3",
+    "@unhead/vue": "2.0.12",
     "nuxt": "3.17.6",
     "nuxt-graphql-client": "0.2.46",
-    "typescript": "5.6.3",
-    "vue": "3.5.17",
+    "typescript": "5.8.3",
+    "vue": "3.5.18",
     "vue-router": "4.5.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.1.1",
-    "@storybook/addon-a11y": "9.0.5",
-    "@storybook/addon-docs": "9.0.5",
-    "@storybook/addon-themes": "9.0.5",
-    "@storybook/addon-vitest": "9.0.5",
+    "@biomejs/biome": "2.1.2",
+    "@storybook/addon-a11y": "9.0.18",
+    "@storybook/addon-docs": "9.0.18",
+    "@storybook/addon-themes": "9.0.18",
+    "@storybook/addon-vitest": "9.0.18",
     "jsdoc-type-pratt-parser": "4.1.0",
-    "storybook": "9.0.5"
+    "storybook": "9.0.18"
   }
 }
